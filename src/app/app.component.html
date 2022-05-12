@@ -1,0 +1,38 @@
+<div class="content">
+  <h1>Tags</h1>
+
+  <img src="assets/tags.gif">
+
+  <h2>
+    The goal of this exercise is to reproduce the behaviour shown in this gif
+  </h2>
+
+  <app-list [header]="rulesTitle"
+            [items]="rules"></app-list>
+
+  <app-list [header]="instructionsTitle"
+            [items]="instructions"
+            [startOpened]="false"
+            [collapsable]="true"></app-list>
+</div>
+
+<div class="container">
+  <div class="header">
+    <p> {{Title}}</p>
+    <div class="tags">
+      <div *ngFor="let tag of TagList;">
+        <p>{{tag}}</p>
+      </div>
+    </div>
+    
+  </div>
+  <div class="input_container">
+    <div>
+      <input type="text" name="Title" value="Title" [(ngModel)]="Title"/>
+      <input type="text" name="MasterTag" [(ngModel)]="TagList[0]"/>
+    </div>
+    <input type="text" name="newTag" [(ngModel)]="newTag"/>
+    <button (click)="addTag(newTag)"> Add Tag</button>
+    <button (click)="RemoveTag()"> Remove last Tag</button>
+  </div>
+</div>

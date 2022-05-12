@@ -1,0 +1,33 @@
+app-list {
+  width: 100%;
+  padding: 16px 0;
+}
+
+.container{
+  width: 700px;
+  margin: 0 auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+.container .header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #ABC69D;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.container .header>p{
+  padding: 0 20px;
+}
+.header .tags{
+  display: flex;
+  padding: 5px;
+  background-color: #c4bc9a;
+  align-items: center;
+}
+.tags p{
+  margin: 2px;
+  padding: 5px;
+  background-color: #9dc6b6;
+
+}
