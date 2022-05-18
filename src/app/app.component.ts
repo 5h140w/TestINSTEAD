@@ -8,7 +8,8 @@ import { ListItem } from './list/list.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  public rulesTitle: string = 'The goal is not only to create a working example but well written code:';
+  public rulesTitle: string =
+    'The goal is not only to create a working example but well written code:';
 
   public rules: ListItem[] = [
     {
@@ -25,7 +26,8 @@ export class AppComponent {
     },
   ];
 
-  public instructionsTitle: string = 'Given the limited time available, implement in priority order:';
+  public instructionsTitle: string =
+    'Given the limited time available, implement in priority order:';
 
   public instructions: ListItem[] = [
     {
@@ -53,15 +55,34 @@ export class AppComponent {
       lines: ['Now, tags come from a (slow) api'],
     },
   ];
-  Title="Some Tags:"
-  TagList=["M Tag","Tag n1", "Tag n2"]
-  newTag=""
-  public addTag(newTag: string){
-    if (newTag.trim().length!=0)this.TagList.push(newTag)
+  //Initialize the title of the header//
+  Title = 'Some Tags:';
+
+  /*  Initialize a variable called TagList : It's a list of strings that contains some initial strings
+      first Tag is the master tag : M Tag
+      TagList=["M Tag","Tag n1", "Tag n2"]
+  */
+  TagList = ['M Tag', 'Tag n1', 'Tag n2'];
+
+  // Initiliaze a variable NewTag that helps us to add a Tag to our list
+  newTag = '';
+
+  /* addTag function : a function that allows us to add a new Tag to our TagList (the end of the list) 
+     We can't add an empty string to the list 
+      
+  */
+  public addTag(newTag: string) {
+    if (newTag.trim().length != 0) this.TagList.push(newTag);
   }
-  public RemoveTag(){
-    if(this.TagList.length>1){
-      this.TagList.pop()
+
+  /*
+    RemoveTag : a function that allows us to delete the last tag in the list
+    We can't delete the master tag
+    we need to make sure that our Taglist contain at least one string (Master)
+  */
+  public RemoveTag() {
+    if (this.TagList.length > 1) {
+      this.TagList.pop();
     }
   }
 }

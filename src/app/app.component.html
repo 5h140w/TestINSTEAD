@@ -1,38 +1,41 @@
 <div class="content">
   <h1>Tags</h1>
 
-  <img src="assets/tags.gif">
+  <img src="assets/tags.gif" />
 
   <h2>
     The goal of this exercise is to reproduce the behaviour shown in this gif
   </h2>
 
-  <app-list [header]="rulesTitle"
-            [items]="rules"></app-list>
+  <app-list [header]="rulesTitle" [items]="rules"></app-list>
 
-  <app-list [header]="instructionsTitle"
-            [items]="instructions"
-            [startOpened]="false"
-            [collapsable]="true"></app-list>
+  <app-list
+    [header]="instructionsTitle"
+    [items]="instructions"
+    [startOpened]="false"
+    [collapsable]="true"
+  ></app-list>
 </div>
 
 <div class="container">
   <div class="header">
-    <p> {{Title}}</p>
-    <div class="tags">
-      <div *ngFor="let tag of TagList;">
-        <p>{{tag}}</p>
-      </div>
-    </div>
-    
+    <!-- Fetch the title of the header-->
+    <p>{{ Title }}</p>
+    <!-- Call the tags components with passing the list as a parameter ( One Way binding)-->
+    <app-tags [TagList]="TagList"></app-tags>
   </div>
   <div class="input_container">
     <div>
-      <input type="text" name="Title" value="Title" [(ngModel)]="Title"/>
-      <input type="text" name="MasterTag" [(ngModel)]="TagList[0]"/>
+      <!-- This input help us to change the title of the header ( two-way binding)-->
+      <input type="text" name="Title" value="Title" [(ngModel)]="Title" />
+      <!-- Chnazge the master Tag string-->
+      <input type="text" name="MasterTag" [(ngModel)]="TagList[0]" />
     </div>
-    <input type="text" name="newTag" [(ngModel)]="newTag"/>
-    <button (click)="addTag(newTag)"> Add Tag</button>
-    <button (click)="RemoveTag()"> Remove last Tag</button>
+    <!-- Modify the newTag variable -->
+    <input type="text" name="newTag" [(ngModel)]="newTag" />
+    <!-- Call the addTag function when clicking in this button-->
+    <button (click)="addTag(newTag)">Add Tag</button>
+    <!-- Delete the last Tag when clicking in the "Remove LastTag" button-->
+    <button (click)="RemoveTag()">Remove last Tag</button>
   </div>
 </div>
